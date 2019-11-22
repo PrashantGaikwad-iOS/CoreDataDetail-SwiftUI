@@ -8,7 +8,7 @@ struct DynamicPredicateView: View {
 
     var body: some View {
         VStack {
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter) { (singer: Singer) in
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, predictionOptions: predicateOptions.equalsTo,predicateKey:"Swift", sortArray: [NSSortDescriptor(keyPath: \Singer.lastName, ascending: false)]) { (singer: Singer) in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
 
